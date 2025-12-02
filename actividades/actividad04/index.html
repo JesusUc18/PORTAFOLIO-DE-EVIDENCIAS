@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Conversiones - Números Complejos</title>
+</head>
+<style>
+/* ==================== RESET BÁSICO ==================== */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+/* ==================== ESTRUCTURA GENERAL ==================== */
+body {
+font-family:Georgia, Times, 'Times New Roman', serif;font-family:Georgia, Times, 'Times New Roman', serif;
+background-color: hsl(293, 100%, 28%);
+padding: 20px;
+line-height: 1.6;
+animation: slideIn 1s ease forwards;
+}
+.container {
+max-width: 800px;
+margin: 0 auto;
+background: #ffc4f5;
+border-radius: 8px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+padding: 30px;
+animation: slideIn 4s ease forwards;
+}
+/* ==================== ENCABEZADOS ==================== */
+h1 {
+text-align: center;
+color: hsl(0, 0%, 0%);
+margin-bottom: 10px;
+font-weight: 300;
+font-size: 30px;
+font-weight: 700;
+}
+h2 {
+  color: hwb(320 9% 43%);
+margin-bottom: 15px;
+font-size: 18px;
+font-weight: 500;
+font-weight: 500;
+}
+p {
+  color: hwb(320 9% 43%);
+font-size: 16px;
+margin: 5px 0;
+text-align: center;
+font-weight: 500;
+margin-bottom: 20px;
+}
+/* ==================== INSTRUCCIONES ==================== */
+.instructions {
+ background-color: hwb(285 91% 0%);
+ padding: 15px;
+ border-radius: 6px;
+ margin-bottom: 25px;
+ font-size: 14px;
+ color: #555;
+}
+.instructions ul {
+ margin-left: 20px;
+ margin-top: 10px;
+}
+.instructions li {
+ margin-bottom: 5px;
+}
+/* ==================== SECCIONES DE FORMULARIO ====================
+*/
+.form-section {
+ margin-bottom: 25px;
+ border: 1px solid #e0e0e0;
+ border-radius: 6px;
+ padding: 20px;
+ background: white;
+}
+.input-group {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ margin-bottom: 15px;
+ }
+.input-group:last-child {
+ margin-bottom: 0;
+}
+/* ==================== ETIQUETAS Y OPERADORES ====================
+*/
+label {
+ min-width: 20px;
+ font-weight: 500;
+ color: #555;
+ font-size: 16px;
+}
+.operator {
+ font-size: 16px;
+ color: #666;
+ margin: 0 5px;
+ font-weight: 500;
+}
+/* ==================== CAMPOS DE ENTRADA ==================== */
+input[type="text"] {
+ width: 100px;
+ padding: 8px 12px;
+ border: 1px solid #ddd;
+ border-radius: 4px;
+ font-size: 14px;
+ text-align: center;
+ font-family: 'Courier New', monospace;
+}
+input[type="text"]:focus {
+ outline: none;
+ border-color: hwb(290 44% 0%);
+ box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+input[readonly] {
+ background-color: #f0f0f0 !important;
+ cursor: not-allowed;
+}
+/* ==================== RESULTADOS ==================== */
+.result {
+ background-color: #f8f9fa;
+ padding: 15px;
+ border-radius: 4px;
+ border-left: 4px solid hsl(318, 70%, 53%);
+ font-family: 'Courier New', monospace;
+ font-size: 16px;
+ color: #2c3e50;
+ min-height: 50px;
+ display: flex;
+ align-items: center;
+ font-weight: bold;
+}
+/* ==================== BOTÓN LIMPIAR ==================== */
+.clear-btn {
+ background-color: #e74c3c;
+ color: white;
+ border: none;
+ padding: 10px 20px;
+ border-radius: 4px;
+ cursor: pointer;
+ font-size: 14px;
+ margin-top: 20px;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ font-weight: 500;
+}
+.clear-btn:hover {
+ background-color: #c0392b;
+ transform: translateY(-1px);
+}
+:focus {
+  animation: zoomIn 0.6s ease-out;
+}
+/* Definición de la animación INTRO */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Definición de la animación BTN */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+</style>
+<body>
+<div class="container">
+<h1>Calculadora de Conversiones de Números Complejos</h1>
+<p>Tecnológico de Software • Fundamentos de Álgebra • 1°
+Cuatrimestre 2025 • Jesús Omar Uc Domínguez • Grupo 1C • Mtro. Jorge Javier Pedroza Romero </p>
+<div class="instructions">
+<strong>Instrucciones:</strong>
+<ul>
+<li>Ingresa un número complejo en cualquiera de las tres
+formas</li>
+<li>Las otras formas se calcularán automáticamente</li>
+<li>Los ángulos se expresan en radianes y en múltiplos de pi cuando es posible</li>
+<li>Para ángulos puedes usar: pi, pi/2, pi/4, pi/3, pi/6,
+2*pi, etc.</li>
+<li>Para raíces cuadradas puedes usar: sqrt(2), sqrt(3),
+sqrt(5), etc.</li>
+<li>Usa números decimales (ejemplo: 1.5, -2.7, 0.5)</li>
+</ul>
+</div>
+<!-- Forma Cartesiana -->
+<div class="form-section">
+<h2>Forma Cartesiana: a + bi</h2>
+<div class="input-group">
+<label>z =</label>
+<input type="text" id="real" placeholder="a (ej: sqrt(2))">
+<span class="operator">+</span>
+<input type="text" id="imag" placeholder="b (ej: sqrt(3))">
+<span class="operator">i</span>
+</div>
+<div class="result" id="cartesian-result">Ingresa los valores
+arriba</div>
+<!-- Forma Polar -->
+<div class="form-section">
+<h2>Forma Polar: r(cos θ + i sin θ)</h2>
+<div class="input-group">
+<label>z =</label>
+<input type="text" id="modulus" placeholder="r (ej: sqrt(2))">
+<span class="operator">(cos</span>
+<input type="text" id="angle" placeholder="θ (ej: pi/2)">
+<span class="operator">+ i sin</span>
+<input type="text" id="angle2" placeholder="θ" readonly
+style="background: #f0f0f0;">
+<span class="operator">)</span>
+</div>
+<div class="result" id="polar-result">Ingresa los valores arriba</div>
+</div>
+<!-- Forma Exponencial -->
+<div class="form-section">
+<h2>Forma Exponencial: re^(iθ)</h2>
+<div class="input-group">
+<label>z =</label>
+<input type="text" id="exp-modulus" placeholder="r (ej: sqrt(5))">
+<span class="operator">e^(i*</span>
+<input type="text" id="exp-angle" placeholder="θ (ej: pi/4)">
+<span class="operator">)</span>
+</div>
+<div class="result" id="exponential-result">Ingresa los valores
+arriba</div>
+</div>
+<button class="clear-btn" onclick="clearAll()">Limpiar Todo</button>
+</div>
+</div>
+</body>
+<script src="script.js"></script>
+</html>
