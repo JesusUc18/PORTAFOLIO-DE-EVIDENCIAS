@@ -13,22 +13,26 @@
 }
 
 :root {
-    --primary-color: #25ebba;
-    --secondary-color: #ea00ff;
-    --accent-color: #3b82f6;
-    --success-color: #10b3b9;
-    --danger-color: #bf0000;
-    --background: #d0b9ff;
-    --card-background: #b3d7ff;
-    --text-primary: #ac30ff;
-    --text-secondary: #ef4edc;
-    --border-color: #e2e8f0;
-    --shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --primary-color: #00c8ff;
+    --secondary-color: #0077ff;
+    --accent-color: #00aaff;
+    --success-color: #22c55e;
+    --danger-color: #ef4444;
+
+    --background: #0b1a33;
+    --card-background: #102d66;
+
+    --text-primary: #e9f3ff;
+    --text-secondary: #b7d9ff;
+
+    --border-color: #1e3a5f;
+
+    --shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.45);
 }
 
 body {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background: var(--background);
     color: var(--text-primary);
     line-height: 1.6;
@@ -44,7 +48,7 @@ body {
 header {
     text-align: center;
     padding: 40px 20px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, #082345, #0f3b73);
     color: white;
     border-radius: 12px;
     margin-bottom: 30px;
@@ -60,7 +64,7 @@ header h1 {
 .subtitle {
     font-size: 1.3rem;
     opacity: 0.9;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     font-weight: 500;
 }
 
@@ -73,7 +77,7 @@ main {
 
 /* Controls Section */
 .controls {
-    background: var(--card-background);
+    background: #0f1e42;
     padding: 30px;
     border-radius: 12px;
     box-shadow: var(--shadow);
@@ -104,23 +108,25 @@ main {
     border: 2px solid var(--border-color);
     border-radius: 8px;
     font-size: 1rem;
+    background: #0c1b3d;
+    color: white;
     transition: all 0.3s ease;
 }
 
 .input-field:focus {
-  border-color: #e24ad8;
-  box-shadow: 0 0 15px rgba(255, 2, 120, 0.5);
-  transform: scale(1.03); 
+    border-color: #00c8ff;
+    box-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
+    transform: scale(1.03);
 }
 
 .input-field option {
-  background-color: #fcdfff;
-  color: #000;
+    background-color: #0b1a33;
+    color: #fff;
 }
 
 .input-field option:hover {
-  background-color: hwb(309 8% 6%);
-  color: #000;
+    background-color: #12315c;
+    color: #fff;
 }
 
 .inputs-container {
@@ -133,7 +139,7 @@ main {
 .btn-primary {
     width: 100%;
     padding: 14px 24px;
-    background: var(--primary-color);
+    background: linear-gradient(90deg, #0077ff, #0051b3);
     color: white;
     border: none;
     border-radius: 8px;
@@ -141,12 +147,12 @@ main {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: var(--shadow-lg);
 }
 
 .btn-primary:hover {
-    background: var(--secondary-color);
+    background: linear-gradient(90deg, #0051b3, #003b80);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
 }
 
 .btn-primary:active {
@@ -161,11 +167,12 @@ main {
 }
 
 .result-card {
-    background: var(--card-background);
+    background: #102d66;
     padding: 24px;
     border-radius: 12px;
     box-shadow: var(--shadow);
     border-left: 4px solid var(--primary-color);
+    animation: fadeIn 0.5s ease-out;
 }
 
 .result-card h2 {
@@ -179,7 +186,7 @@ main {
     font-weight: 600;
     color: var(--primary-color);
     padding: 16px;
-    background: #eff6ff;
+    background: #0f1e42;
     border-radius: 8px;
     text-align: center;
 }
@@ -188,7 +195,7 @@ main {
     font-size: 1.1rem;
     font-family: 'Courier New', monospace;
     padding: 16px;
-    background: #f1f5f9;
+    background: #11294c;
     border-radius: 8px;
     color: var(--text-primary);
 }
@@ -213,7 +220,7 @@ main {
     font-weight: 700;
     color: var(--success-color);
     padding: 20px;
-    background: #f0fdf4;
+    background: #0f2d20;
     border-radius: 8px;
     text-align: center;
 }
@@ -223,7 +230,7 @@ main {
     font-weight: 800;
     color: var(--primary-color);
     padding: 24px;
-    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    background: linear-gradient(135deg, #12315c, #0d2443);
     border-radius: 8px;
     text-align: center;
 }
@@ -235,20 +242,20 @@ main {
 }
 
 .verification.correcto {
-    background: #f0fdf4;
+    background: #0f2d20;
     color: var(--success-color);
     border: 2px solid var(--success-color);
 }
 
 .verification.incorrecto {
-    background: #fef2f2;
+    background: #331919;
     color: var(--danger-color);
     border: 2px solid var(--danger-color);
 }
 
 /* Visualization Section */
 .visualization {
-    background: var(--card-background);
+    background: #102d66;
     padding: 30px;
     border-radius: 12px;
     box-shadow: var(--shadow);
@@ -265,7 +272,7 @@ main {
     border-radius: 8px;
     margin: 20px auto;
     display: block;
-    background: white;
+    background: #ffffff;
 }
 
 .geo-description {
@@ -277,7 +284,7 @@ main {
 
 /* Historial Section */
 .historial-container {
-    background: var(--card-background);
+    background: #102d66;
     padding: 30px;
     border-radius: 12px;
     box-shadow: var(--shadow);
@@ -306,7 +313,7 @@ main {
 }
 
 .btn-secondary:hover {
-    background: #dc2626;
+    background: #b91c1c;
 }
 
 .historial {
@@ -317,9 +324,10 @@ main {
 
 .historial-item {
     padding: 16px;
-    background: #f8fafc;
+    background: #0f1e42;
     border-radius: 8px;
     border-left: 4px solid var(--accent-color);
+    animation: fadeIn 0.3s ease-out;
 }
 
 .historial-item strong {
@@ -341,7 +349,8 @@ footer {
     color: var(--text-secondary);
     border-top: 2px solid var(--border-color);
 }
-/* Responsive Design */
+
+/* Responsive */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
@@ -376,25 +385,6 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.result-card {
-    animation: fadeIn 0.5s ease-out;
-}
-
-.historial-item {
-    animation: fadeIn 0.3s ease-out;
-}
-body {
-  background: linear-gradient(-95deg, #00f5a0, #8e2de2, #4a00e0, #ff00c8);
-  background-size: 500%;
-  animation: moverFondo 10s ease infinite;
-}
-
-@keyframes moverFondo {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 </style>

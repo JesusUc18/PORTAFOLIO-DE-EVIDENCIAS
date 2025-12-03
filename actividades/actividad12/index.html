@@ -6,105 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>División sintética</title>
 <style>
-    * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== FONDO ANIMADO ===== */
 body {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background: #f5f5f5;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: linear-gradient(-95deg, #0f1e42, #102d66, #0b1a33, #001a3a);
+    background-size: 500%;
+    animation: moverFondo 10s ease infinite;
     min-height: 100vh;
-    padding: 20px;
+    padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #e9f3ff;
 }
 
+@keyframes moverFondo {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== CONTENEDOR ===== */
 .container {
-    background: rgb(255, 232, 194);
-    border-radius: 8px;
-    padding: 40px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
+    background: rgba(10, 25, 60, 0.6);
+    border-radius: 12px;
+    padding: 45px;
     width: 100%;
+    max-width: 850px;
+    box-shadow: 0 4px 18px rgba(0, 180, 255, 0.25);
 }
 
+/* ===== TITULOS ===== */
 h1 {
-    color: #333;
+    color: #00c8ff;
     text-align: center;
-    margin-bottom: 10px;
-    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-size: 2rem;
     font-weight: 900;
+    letter-spacing: 0.5px;
 }
 
 .subtitle {
     text-align: center;
-    color: #666;
-    margin-bottom: 30px;
+    color: #b9dfff;
+    margin-bottom: 35px;
     font-size: 1.2em;
 }
 
+/* ===== SECCIONES ===== */
 .input-section {
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 }
 
 label {
     display: block;
-    margin-bottom: 8px;
-    color: #333;
-    font-weight: 600;
+    margin-bottom: 10px;
+    color: #c7e8ff;
+    font-weight: 700;
+    font-size: 1.05em;
 }
 
 .help-text {
     font-size: 0.85em;
-    color: #666;
-    margin-top: 5px;
+    color: #9acaff;
+    margin-top: 6px;
     text-align: center;
 }
 
+/* ===== INPUT ===== */
 input[type="text"] {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 14px;
+    border: 2px solid #1f4d80;
+    border-radius: 6px;
     font-size: 1em;
-    transition: border-color 0.3s;
+    transition: 0.3s;
+    background: #0b1a33;
+    color: #e9f3ff;
 }
 
 input[type="text"]:focus {
     outline: none;
-    border-color: #333;
+    border-color: #00aaff;
+    background: #0f294f;
 }
 
+/* ===== BOTÓN ===== */
 button {
     width: 100%;
-    padding: 15px;
-    background: #a00000;
+    padding: 16px;
+    background: #003c80;
     color: white;
     border: none;
-    border-radius: 4px;
-    font-size: 1em;
-    font-weight: 500;
+    border-radius: 6px;
+    font-size: 1.05em;
+    font-weight: 700;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: 0.2s;
 }
 
 button:hover {
-    background: #ffc400;
+    background: #00aaff;
+    color: #00142a;
 }
 
 button:active {
-    background: #222;
+    background: #00142a;
+    color: white;
 }
 
+/* ===== RESULTADOS ===== */
 .result-section {
-    margin-top: 30px;
-    padding: 20px;
-    background: #ba0606;
-    border-radius: 4px;
-    border: 1px solid #e0e0e0;
+    margin-top: 35px;
+    padding: 25px;
+    background: rgba(0, 50, 110, 0.6);
+    border-radius: 8px;
+    border: 1px solid #0077cc;
     display: none;
 }
 
@@ -113,80 +136,78 @@ button:active {
 }
 
 .result-title {
-    color: #333;
-    font-weight: 500;
-    margin-bottom: 15px;
-    font-size: 1.1em;
+    color: #00c8ff;
+    font-weight: 700;
+    margin-bottom: 18px;
+    font-size: 1.2em;
 }
 
+/* ===== TABLA ===== */
 .process-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-    background: white;
-    border-radius: 4px;
+    background: #0d203f;
+    border-radius: 6px;
     overflow: hidden;
-    border: 1px solid #e0e0e0;
+    margin-bottom: 22px;
+    border: 1px solid #0a3e66;
+    color: #e9f3ff;
 }
 
 .process-table td {
-    padding: 10px;
+    padding: 12px;
     text-align: center;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #0a3e66;
 }
 
 .process-table tr:first-child td {
-    background: #333;
+    background: #003060;
     color: white;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .divisor-cell {
-    background: #fafafa;
-    font-weight: 500;
+    background: #102544;
+    font-weight: 600;
 }
 
+/* ===== RESULTADO FINAL ===== */
 .final-result {
-    background: #f0f0f0;
-    padding: 15px;
-    border-radius: 4px;
+    background: #0b1f39;
+    padding: 18px;
+    border-radius: 6px;
     margin-top: 15px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #0f4f80;
 }
 
 .final-result p {
-    margin: 8px 0;
-    color: #521414;
+    margin: 10px 0;
+    color: #8bd8ff;
+    font-weight: 600;
 }
 
+/* ===== ERRORES ===== */
 .error {
-    background: #ffebee;
-    color: #c62828;
+    background: rgba(255, 0, 0, 0.12);
+    color: #ff4d4d;
     padding: 15px;
-    border-radius: 4px;
+    border-radius: 6px;
     margin-top: 15px;
-    border: 1px solid #ffcdd2;
+    border: 1px solid #ff8f8f;
+    font-weight: 600;
 }
 
+/* ===== EJEMPLO ===== */
 .example {
-    background: #ffdcdc;
-    padding: 10px;
-    border-radius: 4px;
-    margin-top: 10px;
-    font-size: 0.85em;
-    border: 1px solid #ff0000;
-}
-body {
-  background: linear-gradient(-95deg, #f50000, hsl(56, 100%, 50%), #ff7b00, hsl(313, 100%, 50%));
-  background-size: 500%;
-  animation: moverFondo 10s ease infinite;
+    background: rgba(0, 180, 255, 0.1);
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+    font-size: 0.9em;
+    border: 1px solid #00aaff;
+    color: #b6eaff;
 }
 
-@keyframes moverFondo {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.min.js"></script>
 </head>
