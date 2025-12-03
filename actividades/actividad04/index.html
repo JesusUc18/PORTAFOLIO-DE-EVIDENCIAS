@@ -12,171 +12,187 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
+
 /* ==================== ESTRUCTURA GENERAL ==================== */
 body {
-font-family:Georgia, Times, 'Times New Roman', serif;font-family:Georgia, Times, 'Times New Roman', serif;
-background-color: hsl(293, 100%, 28%);
+font-family: Georgia, Times, 'Times New Roman', serif;
+background-color: #0b1a33; /* azul muy oscuro */
 padding: 20px;
 line-height: 1.6;
 animation: slideIn 1s ease forwards;
+color: #e9f3ff; /* texto claro */
 }
+
 .container {
 max-width: 800px;
 margin: 0 auto;
-background: #ffc4f5;
+background: #102d66; /* azul marino suave */
 border-radius: 8px;
-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+box-shadow: 0 0 25px rgba(0, 200, 255, 0.4); /* neón azul */
 padding: 30px;
 animation: slideIn 4s ease forwards;
 }
+
 /* ==================== ENCABEZADOS ==================== */
 h1 {
 text-align: center;
-color: hsl(0, 0%, 0%);
+color: #00c8ff; /* neón */
 margin-bottom: 10px;
-font-weight: 300;
 font-size: 30px;
 font-weight: 700;
 }
+
 h2 {
-  color: hwb(320 9% 43%);
+color: #a8d8ff; /* azul claro */
 margin-bottom: 15px;
 font-size: 18px;
 font-weight: 500;
-font-weight: 500;
 }
+
 p {
-  color: hwb(320 9% 43%);
+color: #cfe9ff;
 font-size: 16px;
-margin: 5px 0;
+margin: 5px 0 20px 0;
 text-align: center;
 font-weight: 500;
-margin-bottom: 20px;
 }
+
 /* ==================== INSTRUCCIONES ==================== */
 .instructions {
- background-color: hwb(285 91% 0%);
- padding: 15px;
- border-radius: 6px;
- margin-bottom: 25px;
- font-size: 14px;
- color: #555;
+background-color: #102d66; 
+padding: 15px;
+border-radius: 6px;
+margin-bottom: 25px;
+font-size: 14px;
+color: #e9f3ff;
+box-shadow: 0 0 15px rgba(0, 200, 255, 0.25);
 }
+
 .instructions ul {
- margin-left: 20px;
- margin-top: 10px;
+margin-left: 20px;
+margin-top: 10px;
 }
+
 .instructions li {
- margin-bottom: 5px;
+margin-bottom: 5px;
 }
-/* ==================== SECCIONES DE FORMULARIO ====================
-*/
+
+/* ==================== SECCIONES DE FORMULARIO ==================== */
 .form-section {
- margin-bottom: 25px;
- border: 1px solid #e0e0e0;
- border-radius: 6px;
- padding: 20px;
- background: white;
+margin-bottom: 25px;
+border: 1px solid #1e3f70;
+border-radius: 6px;
+padding: 20px;
+background: #0f1e42;
+box-shadow: 0 0 20px rgba(0, 150, 255, 0.25);
 }
+
+/* ==================== GRUPOS ==================== */
 .input-group {
- display: flex;
- align-items: center;
- gap: 10px;
- margin-bottom: 15px;
- }
-.input-group:last-child {
- margin-bottom: 0;
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 15px;
 }
-/* ==================== ETIQUETAS Y OPERADORES ====================
-*/
+
 label {
- min-width: 20px;
- font-weight: 500;
- color: #555;
- font-size: 16px;
+min-width: 20px;
+font-weight: 500;
+color: #bcdcff;
+font-size: 16px;
 }
+
 .operator {
- font-size: 16px;
- color: #666;
- margin: 0 5px;
- font-weight: 500;
+font-size: 16px;
+color: #89b8e8;
+margin: 0 5px;
+font-weight: 500;
 }
-/* ==================== CAMPOS DE ENTRADA ==================== */
+
+/* ==================== INPUTS ==================== */
 input[type="text"] {
- width: 100px;
- padding: 8px 12px;
- border: 1px solid #ddd;
- border-radius: 4px;
- font-size: 14px;
- text-align: center;
- font-family: 'Courier New', monospace;
+width: 100px;
+padding: 8px 12px;
+border: 1px solid #00aaff;
+border-radius: 4px;
+font-size: 14px;
+text-align: center;
+font-family: 'Courier New', monospace;
+background-color: #ffffff;
+color: #001a33;
 }
+
 input[type="text"]:focus {
- outline: none;
- border-color: hwb(290 44% 0%);
- box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+outline: none;
+border-color: #00c8ff;
+box-shadow: 0 0 10px rgba(0, 200, 255, 0.6);
+animation: zoomIn 0.6s ease-out;
 }
+
 input[readonly] {
- background-color: #f0f0f0 !important;
- cursor: not-allowed;
+background-color: #dbe9ff !important;
+cursor: not-allowed;
 }
+
 /* ==================== RESULTADOS ==================== */
 .result {
- background-color: #f8f9fa;
- padding: 15px;
- border-radius: 4px;
- border-left: 4px solid hsl(318, 70%, 53%);
- font-family: 'Courier New', monospace;
- font-size: 16px;
- color: #2c3e50;
- min-height: 50px;
- display: flex;
- align-items: center;
- font-weight: bold;
+background-color: #0b1a33;
+padding: 15px;
+border-radius: 4px;
+border-left: 4px solid #00c8ff;
+font-family: 'Courier New', monospace;
+font-size: 16px;
+color: #e9f3ff;
+min-height: 50px;
+display: flex;
+align-items: center;
+font-weight: bold;
+box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
 }
+
 /* ==================== BOTÓN LIMPIAR ==================== */
 .clear-btn {
- background-color: #e74c3c;
- color: white;
- border: none;
- padding: 10px 20px;
- border-radius: 4px;
- cursor: pointer;
- font-size: 14px;
- margin-top: 20px;
- display: block;
- margin-left: auto;
- margin-right: auto;
- font-weight: 500;
+background-color: #00aaff;
+color: #001327;
+border: none;
+padding: 10px 20px;
+border-radius: 4px;
+cursor: pointer;
+font-size: 14px;
+margin-top: 20px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+font-weight: 500;
+box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
 }
+
 .clear-btn:hover {
- background-color: #c0392b;
- transform: translateY(-1px);
+background-color: #00c8ff;
+transform: translateY(-1px);
 }
-:focus {
-  animation: zoomIn 0.6s ease-out;
-}
-/* Definición de la animación INTRO */
+
+/* ==================== ANIMACIONES ==================== */
 @keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+from {
+opacity: 0;
+transform: translateY(-50px);
 }
-/* Definición de la animación BTN */
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
 @keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+from {
+opacity: 0;
+transform: scale(0.5);
+}
+to {
+opacity: 1;
+transform: scale(1);
+}
 }
 </style>
 <body>
