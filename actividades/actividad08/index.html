@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de Variables</title>
   <style>
-    * {
+  * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,9 +13,9 @@
 
 /* ==== FONDO GENERAL ==== */
 body {
-  font-family: 'Segoe UI', Roboto, sans-serif;
-  background: linear-gradient(135deg, #0a757b, #064d51);
-  color: #fff;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: linear-gradient(135deg, #071427, #0a1e3b, #0a1733);
+  color: #e7f6ff;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -25,13 +25,15 @@ body {
 
 /* ==== CONTENEDOR ==== */
 .container {
-  background: #0d5e63;
+  background: rgba(10, 30, 70, 0.55);
   width: 100%;
   max-width: 650px;
   padding: 2.7rem;
   border-radius: 18px;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 8px 30px rgba(0, 180, 255, 0.35);
   gap: 1rem;
+  border: 1px solid rgba(0, 195, 255, 0.25);
+  backdrop-filter: blur(5px);
 }
 
 /* ==== TÍTULO ==== */
@@ -40,15 +42,15 @@ h1 {
   font-weight: 800;
   font-size: 2.2rem;
   margin-bottom: 1.4rem;
-  color: #00eaff;
-  text-shadow: 0px 0px 15px rgba(0, 234, 255, 0.9);
+  color: #00c8ff;
+  text-shadow: 0 0 18px rgba(0, 200, 255, 0.9);
 }
 
 p {
   text-align: center;
   font-size: 1rem;
   margin-bottom: 2.2rem;
-  color: #d1f7f2;
+  color: #badeff;
   line-height: 1.5;
 }
 
@@ -62,17 +64,18 @@ label {
   font-size: 1.05rem;
   font-weight: 600;
   margin-bottom: 0.7rem;
-  color: #b2f5ea;
+  color: #8cd9ff;
 }
 
+/* ==== AREA DE TEXTO ==== */
 textarea {
   width: 100%;
   min-height: 100px;
   padding: 1.1rem;
   border-radius: 12px;
-  border: 2px solid #00eaff;
-  background-color: #0c1b3d;
-  color: #fff;
+  border: 2px solid #0088cc;
+  background-color: #0d203f;
+  color: #e9f3ff;
   font-size: 1rem;
   font-family: 'Courier New', monospace;
   resize: vertical;
@@ -81,19 +84,19 @@ textarea {
 
 textarea:focus {
   outline: none;
-  border-color: #facc15;
-  box-shadow: 0 0 10px rgba(250, 204, 21, 0.75);
+  border-color: #00eaff;
+  box-shadow: 0 0 12px rgba(0, 234, 255, 0.7);
 }
 
 textarea::placeholder {
-  color: #a0aec0;
+  color: #7ca3c7;
 }
 
 /* ==== BOTÓN ==== */
 .calculate-button {
   width: 100%;
   padding: 1.1rem;
-  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  background: linear-gradient(90deg, #004b8e, #007ad1);
   color: #fff;
   font-weight: 700;
   font-size: 1.15rem;
@@ -101,11 +104,11 @@ textarea::placeholder {
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 10px rgba(59, 130, 246, 0.55);
+  box-shadow: 0 6px 14px rgba(0, 150, 255, 0.55);
 }
 
 .calculate-button:hover {
-  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  background: linear-gradient(90deg, #0065b0, #0094ff);
   transform: translateY(-3px);
 }
 
@@ -115,25 +118,28 @@ textarea::placeholder {
 
 /* ==== RESULTADOS ==== */
 .info-card {
-  background-color: #1e293b;
-  border-left: 5px solid #00eaff;
+  background-color: rgba(5, 20, 45, 0.8);
+  border-left: 5px solid #00c8ff;
   border-radius: 14px;
   padding: 1.7rem;
   margin-top: 2.3rem;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 18px rgba(0, 150, 255, 0.35);
+  border: 1px solid rgba(0, 200, 255, 0.25);
+  backdrop-filter: blur(4px);
 }
 
 .info-card h3 {
   font-size: 1.25rem;
   margin-bottom: 1.1rem;
-  color: #38bdf8;
+  color: #00d0ff;
   text-transform: uppercase;
   font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.7);
 }
 
 .result-content {
-  background: #f1f5f9;
-  color: #111827;
+  background: #0d1c33;
+  color: #aee7ff;
   font-family: 'Courier New', monospace;
   font-size: 1.05rem;
   padding: 1.2rem;
@@ -141,6 +147,7 @@ textarea::placeholder {
   min-height: 65px;
   white-space: pre-wrap;
   word-break: break-word;
+  border: 1px solid #005d97;
 }
 
 /*  Colores dinámicos */
