@@ -6,306 +6,396 @@
 <title>Visualizador de la Recta Numérica - Fundamentos de
 Álgebra</title>
 <style>
-/* ==================== RESET BÁSICO Y TIPOGRAFÍA ==================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border-radius: 15px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+border-radius: 15px;
 }
-
-/* ==================== FONDO GENERAL ==================== */
 body {
-    line-height: 1.4;
-    background: linear-gradient(135deg, #0f1e42, #102d66 40%, #0b1a33);
-    color: #e9f3ff;
-    padding: 10px;
+font-family:Georgia, Times, 'Times New Roman', serif;
+line-height: 1.4;
+background-color: lab(13.62% 45.7 -57.15);
+color: rgb(0, 0, 0);
+padding: 10px;
 }
-
-/* ==================== CONTENEDOR ==================== */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 15px;
-    padding: 30px;
-    border: 1px solid rgba(0, 170, 255, 0.3);
-    box-shadow: 0 0px 30px rgba(0, 200, 255, 0.25);
-    backdrop-filter: blur(10px);
+max-width: 1200px;
+margin: 0 auto;
+background: hsl(236, 93%, 32%);
+border-radius: 15px;
+padding: 30px;
+box-shadow: 0 0px 30px hsla(0, 0%, 100%, 0.784);
 }
-
 /* ==================== ENCABEZADOS ==================== */
 h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-    color: #ffffff;
-    text-align: center;
-    text-shadow: 0 0 15px rgba(0, 190, 255, 0.6);
+font-size: 32px;
+margin-bottom: 10px;
+color: rgb(255, 255, 255);
+text-align: center;
 }
-
 h2 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: #e9f3ff;
-    text-align: center;
-    text-shadow: 0 0 10px rgba(0, 150, 255, 0.4);
+font-size: 18px;
+margin-bottom: 15px;
+color: black;
+text-align: center;
 }
-
 h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #dcecff;
+font-size: 16px;
+margin-bottom: 10px;
+color: black;
 }
-
 p {
-    font-size: 16px;
-    margin: 5px 0;
-    text-align: center;
-    color: #dcecff;
+font-size: 16px;
+margin: 5px 0;
+text-align: center;
 }
-
 /* ==================== CONTROLES Y FORMULARIOS ==================== */
 .controls {
-    border: 2px solid rgba(0, 170, 255, 0.4);
-    padding: 20px;
-    margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
+border: 2px solid black;
+padding: 20px;
+margin-bottom: 20px;
+background-color: hwb(247 24% 0%);
 }
-
 .input-group {
-    margin-bottom: 20px;
+margin-bottom: 20px;
 }
-
 .input-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #e9f6ff;
+display: block;
+font-weight: bold;
+margin-bottom: 5px;
+color: rgb(255, 255, 255);
 }
-
 .input-group input {
-    width: 300px;
-    padding: 8px;
-    border: 2px solid rgba(0, 170, 255, 0.4);
-    background: rgba(255, 255, 255, 0.07);
-    color: #e9f3ff;
-    font-size: 14px;
+width: 300px;
+padding: 8px;
+border: 2px solid rgb(47, 0, 255);
+font-size: 14px;
+margin-bottom: 10px;
 }
-
 .input-group input:focus {
-    outline: none;
-    border-color: #00c8ff;
+outline: none;
+border-color: blue;
 }
-
 /* ==================== BOTONES ==================== */
 button {
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
-    border: 2px solid rgba(0, 170, 255, 0.5);
-    background: linear-gradient(135deg, #0c3f70, #0a6cbf);
-    color: white;
-    cursor: pointer;
-    margin-right: 10px;
-    margin-bottom: 5px;
-    text-shadow: 0 0 8px rgba(0, 180, 255, 0.7);
+padding: 10px 20px;
+font-size: 14px;
+font-weight: bold;
+border: 2px solid black;
+background-color: blue;
+color: white;
+cursor: pointer;
+margin-right: 10px;
+margin-bottom: 5px;
 }
-
 button:hover {
-    background: linear-gradient(135deg, #0da3ff, #0c6cd9);
+background-color: oklab(64.06500000000001% -0.05776 -0.18882);
+color: rgb(255, 255, 255);
 }
-
 /* ==================== NÚMEROS PREDEFINIDOS ==================== */
+.preset-section {
+margin-top: 20px;
+}
 .preset-section h3 {
-    color: #e9f3ff;
+font-size: 16px;
+margin-bottom: 10px;
+color: black;
 }
-
 .preset-section p {
-    margin-bottom: 15px;
-    color: #dcecff;
-    font-size: 14px;
-    text-align: left;
+margin-bottom: 15px;
+color: black;
+font-size: 14px;
+text-align: left;
 }
-
 .preset-numbers {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 15px;
+display: flex;
+flex-wrap: wrap;
+gap: 5px;
+margin-top: 15px;
 }
-
 .preset-btn {
-    padding: 5px 10px;
-    border: 2px solid rgba(0, 170, 255, 0.4);
-    background: rgba(255, 255, 255, 0.07);
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: bold;
-    color: #e9f3ff;
+padding: 5px 10px;
+border: 2px solid black;
+background-color: white;
+cursor: pointer;
+font-size: 12px;
+font-weight: bold;
 }
-
 .preset-btn:hover {
-    background: #00aaff;
-    color: white;
+background-color: #0015ff;
+color: white;
 }
-
 /* ==================== RECTA NUMÉRICA ==================== */
 .number-line-container {
-    border: 2px solid rgba(0, 170, 255, 0.4);
-    padding: 20px;
-    margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
+ border: 2px solid rgb(255, 255, 255);
+ padding: 20px;
+ margin-bottom: 20px;
+ background-color: hwb(242 35% 5%);
 }
-
 .number-line-container h2 {
-    color: hsl(0, 0%, 87%);
+ font-size: 18px;
+ margin-bottom: 15px;
+ text-align: center;
+ color: rgb(255, 255, 255);
 }
-
 .number-line {
-    width: 100%;
-    height: 100px;
-    position: relative;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(0, 170, 255, 0.4);
+ width: 100%;
+ height: 100px;
+ position: relative;
+ background-color: white;
+ border: 1px solid black;
+ margin: 20px 0;
 }
-
-/* Rango */
+.range-info {
+ text-align: center;
+ margin-top: 10px;
+}
 .range-info small {
-    color: #dcecff;
+ color: black;
+ font-size: 12px;
 }
-
 /* ==================== ELEMENTOS DE LA RECTA ==================== */
 .line {
-    background-color: #a3cfff;
+ position: absolute;
+ top: 48px;
+ left: 5%;
+ right: 5%;
+ height: 4px;
+ background-color: black;
 }
-
 .tick {
-    background-color: #dcecff;
+ position: absolute;
+ width: 2px;
+ height: 20px;
+ background-color: black;
+ top: 38px;
 }
-
 .tick-label {
-    color: #e9f3ff;
+ position: absolute;
+ top: 65px;
+ font-size: 12px;
+ font-weight: bold;
+ color: black;
+ transform: translateX(-50%);
 }
-
-/* ==================== PUNTOS DE COLORES ==================== */
+/* ==================== PUNTOS EN LA RECTA ==================== */
 .number-point {
-    border: 2px solid white;
+ position: absolute;
+ width: 16px;
+ height: 16px;
+ top: 40px;
+ transform: translateX(-50%);
+ border: 2px solid black;
+ cursor: pointer;
 }
-
 .number-point.naturals {
-    background-color: #ff5e5e;
+ background-color: red;
 }
-
 .number-point.integers {
-    background-color: #4ea3ff;
+ background-color: blue;
 }
-
 .number-point.rationals {
-    background-color: #45d27d;
+ background-color: green;
 }
-
 .number-point.irrationals {
-    background-color: #ffe066;
+ background-color: yellow;
 }
-
 .point-label {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(0, 170, 255, 0.4);
-    color: #e9f3ff;
+ position: absolute;
+ top: -25px;
+ transform: translateX(-50%);
+ background-color: white;
+ border: 1px solid rgb(0, 0, 0);
+ padding: 2px 4px;
+ font-size: 10px;
+ font-weight: bold;
+ white-space: nowrap;
 }
-
-/* =================== PANEL INFO =================== */
-.classification-panel,
-.points-panel,
-.distance-calculator {
-    border: 2px solid rgba(0, 170, 255, 0.4);
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
+/* =================== PANELES DE INFORMACIÓN =================== */
+.info-panels {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 20px;
 }
-
-.classification-panel h3,
-.points-panel h3,
-.distance-calculator h3 {
-    color: #e9f3ff;
-    border-bottom: 2px solid rgba(0, 170, 255, 0.4);
+.classification-panel, .points-panel, .distance-calculator {
+ border: 2px solid black;
+ padding: 15px;
+ background-color: hwb(237 28% 0%);
 }
-
-/* ======== LEYENDA ======== */
+.classification-panel h3, .points-panel h3, .distance-calculator h3 {
+ font-size: 16px;
+ margin-bottom: 15px;
+ color: black;
+ border-bottom: 2px solid black;
+ padding-bottom: 5px;
+ text-align: center;
+}
+/* ================== LEYENDA DE CLASIFICACIÓN ================== */
+.classification-legend {
+ margin-bottom: 20px;
+}
+.legend-item {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ margin: 10px 0;
+ padding: 5px;
+}
 .legend-color {
-    border: 2px solid white;
+ width: 20px;
+ height: 20px;
+ border: 2px solid black;
 }
-
 .legend-color.naturals {
-    background-color: #ff5e5e;
+ background-color: red;
 }
 .legend-color.integers {
-    background-color: #4ea3ff;
+ background-color: blue;
 }
 .legend-color.rationals {
-    background-color: #45d27d;
+ background-color: green;
 }
 .legend-color.irrationals {
-    background-color: #ffe066;
+ background-color: yellow;
 }
-
+.classification-info h4 {
+ font-size: 14px;
+ margin: 15px 0 10px 0;
+ color: black;
+}
+.classification-info ul {
+ margin-left: 20px;
+}
 .classification-info li {
-    color: #dcecff;
+ margin: 5px 0;
+ font-size: 12px;
 }
-
 /* ==================== LISTA DE PUNTOS ==================== */
-.empty-state p,
+.points-list {
+ min-height: 200px;
+}
+.empty-state p {
+ font-size: 14px;
+ color: rgb(255, 255, 255);
+ text-align: center;
+ margin: 20px 0;
+}
 .empty-state small {
-    color: #dcecff;
+ display: block;
+ text-align: center;
+ font-size: 12px;
+ color: rgb(255, 255, 255);
 }
-
 .point-item {
-    border: 1px solid rgba(0, 170, 255, 0.4);
-    color: #e9f3ff;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 10px;
+ margin: 5px 0;
+ border: 1px solid black;
 }
-
 /* ================== CALCULADORA DE DISTANCIAS ================== */
 .calculator-description {
-    color: #dcecff;
+ margin-bottom: 15px;
+ font-size: 13px;
+ color: rgb(255, 255, 255);
+ text-align: left;
 }
-
+.distance-inputs {
+ margin-bottom: 20px;
+}
+.distance-field {
+ margin-bottom: 15px;
+}
 .distance-field label {
-    color: #e9f3ff;
+ display: block;
+ font-weight: bold;
+ margin-bottom: 5px;
+ color: rgb(255, 255, 255);
 }
-
+.custom-select {
+ position: relative;
+ width: 100%;
+}
 .select-selected {
-    border: 2px solid rgba(0, 170, 255, 0.4);
-    background: rgba(255, 255, 255, 0.05);
-    color: #e9f3ff;
+ padding: 8px 30px 8px 10px;
+ border: 2px solid black;
+ background-color: white;
+ cursor: pointer;
+ font-size: 14px;
 }
-
+.select-selected:after {
+ content: "▼";
+ position: absolute;
+ right: 10px;
+ top: 50%;
+ transform: translateY(-50%);
+ font-size: 10px;
+}
 .select-items {
-    background: rgba(20, 40, 80, 0.8);
-    border: 2px solid rgba(0, 170, 255, 0.4);
+ position: absolute;
+ top: 100%;
+ left: 0;
+ right: 0;
+ background-color: white;
+ border: 2px solid black;
+ border-top: none;
+ z-index: 1000;
+ max-height: 150px;
+ overflow-y: auto;
+ display: none;
 }
-
+.select-items.show {
+ display: block;
+}
 .select-items div {
-    color: #e9f3ff;
+ padding: 8px 10px;
+ cursor: pointer;
+ border-bottom: 1px solid black;
+ font-size: 13px;
 }
-
 .select-items div:hover {
-    background: #00aaff;
-    color: #ffffff;
+ background-color: blue;
+ color: white;
 }
-
 .distance-btn {
-    background: linear-gradient(135deg, #0c3f70, #0a6cbf);
-    border: 2px solid rgba(0, 170, 255, 0.4);
-    color: #e9f3ff;
+ width: 100%;
+ padding: 12px;
+ background-color: blue;
+ color: white;
+ border: 2px solid black;
+ font-size: 14px;
+ font-weight: bold;
+ cursor: pointer;
+ margin-bottom: 15px;
 }
-
+.distance-placeholder {
+ text-align: center;
+ padding: 20px;
+ border: 1px solid black;
+}
 .distance-result {
-    border: 2px solid #00c8ff;
-    background: rgba(255, 255, 255, 0.07);
-    color: #e9f3ff;
+ padding: 15px;
+ border: 2px solid green;
+ background-color: white;
+ font-size: 14px;
+ text-align: center;
+}
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+ .container {
+ margin: 5px;
+ }
+
+ .input-group input {
+ width: 100%;
+ max-width: 300px;
+ }
+
+ .info-panels {
+ grid-template-columns: 1fr;
+ }
 }
 </style>
 </head>
